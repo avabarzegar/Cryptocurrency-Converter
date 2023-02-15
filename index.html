@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="Digital Currency Converter"
+      content="Digital Currency Converte"
+    />
+    <meta name="keywords" content="write keywords here" />
+    <meta name="author" content="Fatemeh Barzegar" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" type="image/png" href="../pictures/piche-logo.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>برتر پرداخت | ارز دیجیتال</title>
+  </head>
+  <body>
+    <header class="container-fluid digi-header-container">
+      <div class="digi-header">
+        <div class="digi-header-contain container">
+          <!-- converter  -->
+          <div class="col-xxl-4 col-lg-5 m-auto">
+            <div class="converter-box">
+              <ul
+                class="converter-tab nav border-0 primary nav-tabs"
+                id="myTab"
+                role="tablist"
+              >
+                <li class="converter-btn-tab nav-item" role="presentation">
+                  <a
+                    class="nav-link-converter nav-link active"
+                    id="buy-tab"
+                    data-bs-toggle="tab"
+                    href="#buy"
+                    role="tab"
+                    aria-controls="home"
+                    aria-selected="true"
+                    >Buy</a
+                  >
+                </li>
+                <li class="converter-btn-tab nav-item" role="presentation">
+                  <a
+                    class="nav-link-converter nav-link"
+                    id="sell-tab"
+                    data-bs-toggle="tab"
+                    href="#sell"
+                    role="tab"
+                    aria-controls="profile"
+                    aria-selected="false"
+                    >Sell</a
+                  >
+                </li>
+              </ul>
+
+              <div class="tab-content" id="myTabContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="buy"
+                  role="tabpanel"
+                  aria-labelledby="buy-tab"
+                >
+                  <div class="row currency-input-container">
+                    <div class="pl-0 col-5 currency-bp-list col-item-1">
+                      <div class="d-flex flex-column align-items-start">
+                        <span class="txt-up-list">Buy</span>
+                        <div class="currency-converter-container">
+                          <select
+                            id="currency-select1"
+                            onchange="changeCurrency()"
+                            style="direction: ltr"
+                            class="js-example-templating js-example-basic-single js-example-placeholder-single js-states form-control currency-list"
+                            name="states"
+                          >
+                            <option
+                              id="tether-price-buy"
+                              value="Tether"
+                              data-img_src="https://panel.bartarpardakht.com/uploads/2021/6/5/tether.svg"
+                              selected
+                            >
+                              Tether
+                            </option>
+                            <option
+                              id="Bitcoin-price-buy"
+                              value="Bitcoin"
+                              data-img_src="https://panel.bartarpardakht.com/uploads/2021/6/5/btc.svg"
+                            >
+                              Bitcoin
+                            </option>
+                            <option
+                              id="Ethereum-price-buy"
+                              value="Ethereum"
+                              data-img_src="https://panel.bartarpardakht.com/uploads/2021/6/23/ethereum-.png"
+                            >
+                              Ethereum
+                            </option>
+                            <option
+                              id="DOT-price-buy"
+                              value="DOT"
+                              data-img_src="https://panel.bartarpardakht.com/uploads/2021/6/5/DOT.png"
+                            >
+                              Polkadat
+                            </option>
+                            <option
+                              id="ADA-price-buy"
+                              value="ADA"
+                              data-img_src="https://panel.bartarpardakht.com/uploads/2021/6/5/ada.svg"
+                            >
+                              Kardano
+                            </option>
+                            <option
+                              id="XRP-price-buy"
+                              value="XRP"
+                              data-img_src="https://panel.bartarpardakht.com/uploads/2021/6/5/xrp.svg"
+                            >
+                              Rippel
+                            </option>
+                            <option
+                              id="BNB-price-buy"
+                              value="BNB"
+                              data-img_src="https://panel.bartarpardakht.com/uploads/2021/6/5/bnb.svg"
+                            >
+                              Binance Coin
+                            </option>
+                            <option
+                              id="LTC-price-buy"
+                              value="LTC"
+                              data-img_src="https://panel.bartarpardakht.com/uploads/2021/6/5/ltc.svg"
+                            >
+                              Lite Coin
+                            </option>
+                            <option
+                              id="Link-price-buy"
+                              value="Link"
+                              data-img_src="https://api.excoino.com/assets/icons/v4/currencies/BSV.svg"
+                            >
+                              Chin link
+                            </option>
+                            <option
+                              id="DOGE-price-buy"
+                              value="DOGE"
+                              data-img_src="https://panel.bartarpardakht.com/uploads/2021/6/5/doge.svg"
+                            >
+                              Doge coin
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-2 digi-header-flash">
+                      <img
+                        src="./img/digi-flash.svg"
+                        width="100%"
+                        alt="flash-right"
+                      />
+                    </div>
+                    <div
+                      class="col-5 currency-bp-list col-item-3 toman-input-container"
+                    >
+                      <div class="d-flex flex-column align-items-start">
+                        <span class="txt-up-list">With</span>
+                        <div class="currency-converter-container">
+                          <div class="toman-container">
+                            <div class="toman-img-header">
+                              <img
+                                src="./img/toman.png"
+                                width="100%"
+                                alt="toman"
+                              />
+                            </div>
+                            <span class="toman-txt"> Toman </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="price-input-container">
+                    <div class="row total-price-container">
+                      <input
+                        type="number"
+                        onkeyup="changePriceBuy()"
+                        id="all-price"
+                        class="col-9 erase-price-buy total-price"
+                        placeholder="Total Price(Toman)"
+                      />
+                      <button
+                        onclick="erasePriceBuy()"
+                        class="col-3 erase-total"
+                      >
+                        <span>Clear All</span>
+                      </button>
+                    </div>
+                    <div class="row amount-price total-price-container">
+                      <input
+                        type="number"
+                        onkeyup="changeAmountBuy()"
+                        class="col-9 erase-price-buy unit-price total-price"
+                      />
+                      <span class="col-3 currency-name-converter"></span>
+                    </div>
+                  </div>
+                  <div class="price-unit-one">
+                    <div
+                      class="d-flex flex-row justify-content-between align-items-center"
+                    >
+                      <span class="unit-price-txt">Unite Price:</span>
+                      <div class="d-flex flex-row unit-price-con">
+                        <span class="unit-price-buy ms-1"></span
+                        ><span> Toman</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <a class="converter-btn-buy-a">
+                    <span class="converter-btn-buy">Order Buy</span>
+                  </a>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="sell"
+                  role="tabpanel"
+                  aria-labelledby="sell-tab"
+                >
+                  <div class="row currency-input-container">
+                    <div class="pl-0 col-5 currency-bp-list col-item-1">
+                      <div class="d-flex flex-column align-items-start">
+                        <span class="txt-up-list">Sell</span>
+                        <div class="currency-converter-container">
+                          <select
+                            id="currency-select2"
+                            onchange="changeCurrency2()"
+                            style="direction: ltr"
+                            class="js-example-templating js-example-basic-single js-example-placeholder-single js-states form-control currency-list"
+                            name="states"
+                          >
+                            <option
+                              id="tether-price-buy"
+                              value="Tether"
+                              data-img_src="https://panel.bartarpardakht.com/uploads/2021/6/5/tether.svg"
+                              selected
+                            >
+                              Tether
+                            </option>
+                            <option
+                              id="Bitcoin-price-buy"
+                              value="Bitcoin"
+                              data-img_src="https://panel.bartarpardakht.com/uploads/2021/6/5/btc.svg"
+                            >
+                              Bitcoin
+                            </option>
+                            <option
+                              id="Ethereum-price-buy"
+                              value="Ethereum"
+                              data-img_src="https://panel.bartarpardakht.com/uploads/2021/6/23/ethereum-.png"
+                            >
+                              Ethereum
+                            </option>
+                            <option
+                              id="DOT-price-buy"
+                              value="DOT"
+                              data-img_src="https://panel.bartarpardakht.com/uploads/2021/6/5/DOT.png"
+                            >
+                              Polkadat
+                            </option>
+                            <option
+                              id="ADA-price-buy"
+                              value="ADA"
+                              data-img_src="https://panel.bartarpardakht.com/uploads/2021/6/5/ada.svg"
+                            >
+                              Kardano
+                            </option>
+                            <option
+                              id="XRP-price-buy"
+                              value="XRP"
+                              data-img_src="https://panel.bartarpardakht.com/uploads/2021/6/5/xrp.svg"
+                            >
+                              Rippel
+                            </option>
+                            <option
+                              id="BNB-price-buy"
+                              value="BNB"
+                              data-img_src="https://panel.bartarpardakht.com/uploads/2021/6/5/bnb.svg"
+                            >
+                              Binance Coin
+                            </option>
+                            <option
+                              id="LTC-price-buy"
+                              value="LTC"
+                              data-img_src="https://panel.bartarpardakht.com/uploads/2021/6/5/ltc.svg"
+                            >
+                              Lite Coin
+                            </option>
+                            <option
+                              id="Link-price-buy"
+                              value="Link"
+                              data-img_src="https://api.excoino.com/assets/icons/v4/currencies/BSV.svg"
+                            >
+                              Chin link
+                            </option>
+                            <option
+                              id="DOGE-price-buy"
+                              value="DOGE"
+                              data-img_src="https://panel.bartarpardakht.com/uploads/2021/6/5/doge.svg"
+                            >
+                              Doge coin
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-2 digi-header-flash">
+                      <img
+                        src="./img/digi-flash.svg"
+                        width="100%"
+                        alt="flash-right"
+                      />
+                    </div>
+                    <div
+                      class="col-5 currency-bp-list col-item-3 toman-input-container"
+                    >
+                      <div class="d-flex flex-column align-items-start">
+                        <span class="txt-up-list">With</span>
+                        <div class="currency-converter-container">
+                          <div class="toman-container">
+                            <div class="toman-img-header">
+                              <img
+                                src="./img/toman.png"
+                                width="100%"
+                                alt="toman"
+                              />
+                            </div>
+                            <span class="toman-txt"> Toman </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="price-input-container">
+                    <div class="row total-price-container">
+                      <input
+                        type="number"
+                        onkeyup="changePriceSell()"
+                        id="all-amount"
+                        class="col-9 erase-price-sell total-price"
+                      />
+                      <button
+                        onclick="erasePriceSell()"
+                        class="col-3 erase-total"
+                      >
+                        <span>Clear All</span>
+                      </button>
+                    </div>
+                    <div class="row amount-price total-price-container">
+                      <input
+                        type="number"
+                        onkeyup="changeAmountSell()"
+                        placeholder="Total Price(Toman)"
+                        class="col-9 all-price-sell erase-price-sell total-price"
+                      />
+                      <span class="col-3 currency-name-converter-sell">
+                        IRT
+                      </span>
+                    </div>
+                  </div>
+                  <div class="price-unit-one">
+                    <div
+                      class="d-flex flex-row justify-content-between align-items-center"
+                    >
+                      <span class="unit-price-txt">Unit Price:</span>
+                      <div class="d-flex flex-row unit-price-con">
+                        <span class="unit-price-sell ms-1"></span
+                        ><span>Toman</span>
+                      </div>
+                    </div>
+                  </div>
+                  <a class="converter-btn-sell-a">
+                    <span class="converter-btn-sell">Order Sell</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /converter  -->
+        </div>
+      </div>
+    </header>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="./Api/Api.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
