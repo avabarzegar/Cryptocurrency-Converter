@@ -1,2 +1,2 @@
 # Converter
-Criptocurrency Converter using Html, Css, and JavaScript
+Cryptocurrency Converter using Html, Css, and JavaScript
